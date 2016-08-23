@@ -16,13 +16,7 @@ class Casual {
   }
 
   getHelp(message, bot) {
-    bot.sendMessage(message.from, 'Here is what I can do 🤖', {
-      reply_markup: {
-        keyboard: [
-          ['Music recommendation']
-        ]
-      }
-    })
+    bot.sendMessage(message.from, '🔑It\'s dangerous business, walking out one\'s front door\nHere are some commands I understand:\nLook/Examine - see what is around you\nNorth, South, etc - Exit in the direction given')
   }
 }
 

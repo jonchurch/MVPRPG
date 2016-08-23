@@ -1,7 +1,8 @@
-# Bot Server
-Example server-side infrastructure for building and supporting conversational interfaces. If you want to find out more, check out my Medium post [here](https://medium.com/@JonathanZWhite/server-side-infrastructure-when-bots-invade-a2252e9d4bc9).
+# Chatbot Text Adventure
+Playground for experimenting with creating text adventures in messenging apps. Think [MUDs](https://en.wikipedia.org/wiki/MUD) with emoji
 
-This particular example of the server provides Spotify music recommendations when you talk to your bot. If you want to try the bot out without running the server, send a message to [@HelloAriaBot](telegram.me/HelloAriaBot) on Telegram.
+# Bot Server
+I'm using a paradigm I found in an article by @JonathanZWhite for the structure of the app. See his article about server-side infrastructure for building and supporting conversational interfaces  [here](https://medium.com/@JonathanZWhite/server-side-infrastructure-when-bots-invade-a2252e9d4bc9):cheers:
 
 ### Installation
 ##### Node
@@ -23,7 +24,4 @@ Run `$ npm install`
 ### Running
 1. Run `$ npm start`
 2. Text the bot you made during the installation process
-3. Enjoy Spotify music recommendations
-
-### Demo
-![Demo](./demo.gif)
+3. Send 'help' for a list of commands and guidance
