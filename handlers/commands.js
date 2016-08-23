@@ -3,8 +3,9 @@
 const Promise = require('bluebird')
 const logger = require('../utils/logger')
 const store = require('../store')
-const LocationService = require('../services/locations')
+const LocationService = require('../services/LocationService')
 const find = require('lodash.find')
+const PlayerService = require('../services/PlayerService')
 const Look = require('./look')
 const look = new Look()
 
@@ -19,7 +20,7 @@ class Commands {
     const room_exits = LocationService.getExits(user.current_location)
     const found = find(room_exits, ['direction', input])
     //The goal here is to move the player and relook the rooms
-    store.update(message.from, {'current_location': found.location} )
+    PlayerService.movePlayer(message.from, found.location)
     look.getLookString(message, bot)
 
   }

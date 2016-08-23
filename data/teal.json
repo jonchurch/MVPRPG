@@ -8,7 +8,11 @@
     "direction": "south", "location": "1"
   }
 ],
-"items": [],
+"items": [
+  {
+    "name": "spoon"
+  }
+],
 "isQuitRoom": false
 },
 "quiet":{

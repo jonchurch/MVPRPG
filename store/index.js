@@ -14,8 +14,17 @@ let store = {
   _initializeUser: function(hash) {
     this._users[hash] = {
       command: '',
-      current_location: '0'
+      current_location: '0',
+      inventory: [
+        {"name": "Dirty Towel", "id": "1231321", "value": 42}
+      ]
     }
+  },
+
+  add: function(hash, data){
+    if (!this._users[hash]) this._initializeUser(hash)
+    console.log("Adding to inventory:", data);
+    this._users[hash].inventory.push(data)
   },
 
   update: function(hash, data) {

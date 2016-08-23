@@ -3,7 +3,7 @@
 const Promise = require('bluebird')
 const logger = require('../utils/logger')
 const store = require('../store')
-const LocationService = require('../services/locations')
+const LocationService = require('../services/LocationService')
 
 class Look {
     constructor() {}
