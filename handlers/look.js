@@ -10,12 +10,16 @@ class Look {
 
     getLookString(message, bot) {
         store.getState(message.from)
-        getRoomDescription(message, bot)
+        const viewStr = getRoomDescription(message, bot)
+
+
+        bot.sendMessage(message.from, viewStr)
 
         function getRoomDescription(message, bot) {
             // room = LocationService
-             var str = LocationService.getRoomDescription(message.from) 
-             bot.sendMessage(message.from, str)
+             const str = LocationService.getRoomDescription(message.from)
+             const exits = LocationService.getRoomExitsView(message.from)
+             return str + exits
            }
         }
     }

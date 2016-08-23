@@ -1,8 +1,8 @@
-require('dotenv').config()
+require('dotenv').load()
 module.exports = {
   local: {
     telegram: {
-      token: process.env.TELEGRAM_TOKEN || ''
+      TOKEN: process.env.TELEGRAM_TOKEN || ''
     }
   }
-}['local']
+}.local

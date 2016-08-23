@@ -14,7 +14,7 @@ let store = {
   _initializeUser: function(hash) {
     this._users[hash] = {
       command: '',
-      current_location: 0
+      current_location: '0'
     }
   },
 

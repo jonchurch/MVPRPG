@@ -11,6 +11,7 @@ class Casual {
   }
 
   getUnrecognized(message, bot) {
+    console.log('WUT?');
     bot.sendMessage(message.from, 'Sorry I don\'t follow')
   }
 
