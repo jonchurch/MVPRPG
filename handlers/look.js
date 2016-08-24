@@ -7,8 +7,13 @@ const LocationService = require('../services/LocationService')
 
 class Look {
     constructor() {}
-
-    getLookString(message, bot) {
+/**
+ * getLookString handles player look input
+ * @param  {object} message Message object sent by player, contains input text
+ * @param  {object} bot     Messenger API instance for sending and receiving messages
+ * @return {side effect}    Sends location description and exits to player view    
+ */
+getLookString(message, bot) {
         store.getState(message.from)
         const viewStr = getRoomDescription(message, bot)
 

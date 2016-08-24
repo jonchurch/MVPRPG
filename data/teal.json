@@ -1,39 +1,50 @@
 {
-"champagne":{
-    "id": "0",
-    "name": "Champagne Room",
-    "description": "Absolutely no sex is allowed here. There are chairs arranged around a coffee table with magazines in the center of the room. There is one drug on the table next to a spoon.",
-"exits": [
-  {
-    "direction": "south", "location": "1"
-  }
-],
-"items": [
-  {
-    "name": "spoon"
-  }
-],
-"isQuitRoom": false
-},
-"quiet":{
-    "id": "1",
-    "name": "Quiet Room",
-    "description": "The walls are covered with art that seems misguided. This room is for relaxing, and you can tell. Plants grow from the ceiling in long vines.",
-    "exits": [
-    {"direction": "north", "location": "0"},
-    {"direction": "west", "location": "2"}
-    ],
-    "items": [],
-    "isQuitRoom": false
-},
-"sun":{
-    "id": "2",
-    "name": "Sun Room",
-    "description": "Light spills in from the 3 walls of windows around you. There is a large pile of sand with a stingray floating lazily above it",
-    "exits": [
-      {"direction": "east", "location": "1"}
-    ],
-    "items": [],
-    "isQuitRoom": false
-}
+    "champagne": {
+        "id": "0",
+        "name": "Champagne Room",
+        "description": "Absolutely no sex is allowed here. There are chairs arranged around a coffee table with magazines in the center of the room. There is one drug on the table next to a spoon.",
+        "exits": [{
+            "direction": "south",
+            "location": "1"
+        }],
+        "items": [{
+            "name": "spoon",
+            "id": "null",
+            "value": 7,
+            "take": -1
+        }, {
+            "name": "drug",
+            "id": "420",
+            "value": 67,
+            "take": 1
+        }
+      ],
+        "features": [],
+        "isQuitRoom": false
+    },
+    "quiet": {
+        "id": "1",
+        "name": "Quiet Room",
+        "description": "The walls are covered with art that seems misguided. This room is for relaxing, and you can tell. Plants grow from the ceiling in long vines.",
+        "exits": [{
+            "direction": "north",
+            "location": "0"
+        }, {
+            "direction": "west",
+            "location": "2"
+        }],
+        "items": [],
+        "isQuitRoom": false
+    },
+    "sun": {
+        "id": "2",
+        "name": "Sun Room",
+        "description": "Light spills in from the 3 walls of windows around you. There is a large pile of sand with a stingray floating lazily above it",
+        "exits": [{
+            "direction": "east",
+            "location": "1"
+        }],
+        "items": [],
+        "isQuitRoom": false
+    }
 }
