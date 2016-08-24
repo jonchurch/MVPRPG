@@ -12,7 +12,6 @@ class Take {
  * @return {side effect}    Sends user a response with bot object
  */
 takeItem(message, bot) {
-  console.log('bot',bot._request)
   const input = message.text.toLowerCase().trim()
   const token = input.split(" ")
   token.shift()
