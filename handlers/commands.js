@@ -45,7 +45,7 @@ exit(message, bot) {
     for (let i = 0; i < inv.length; i += 1) {
       arr.push(inv[i].name)
     }
-    invStr ="Inventory: " + arr.join(", ")
+    invStr = "Inventory: " + arr.join(", ")
   } else  invStr = "Inventory empty"
   return  bot.sendMessage(message.from, invStr)
 
