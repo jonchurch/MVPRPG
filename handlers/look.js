@@ -11,7 +11,7 @@ class Look {
          * getLookString handles player look input
          * @param  {object} message Message object sent by player, contains input text
          * @param  {object} bot     Messenger API instance for sending and receiving messages
-         * @return {side effect}    Sends location description and exits to player view
+         * @return {object}    Returns message sent to player with current room description and exits
          */
     getLookString(message, bot) {
         store.getState(message.from)
@@ -51,7 +51,9 @@ class Look {
                 // })
         }
         console.log(keyboard);
-        bot.sendMessage(message.from, viewStr, keyboard)
+        bot.sendMessage(message.from, viewStr, keyboard).then(function(result) {
+        console.log('RESULTS:\n',result);
+        })
 
         function getRoomDescription(message) {
             // room = LocationService
@@ -61,5 +63,7 @@ class Look {
         }
     }
 }
+
+
 
 module.exports = Look

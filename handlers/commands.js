@@ -48,10 +48,11 @@ const options = {
   }
 
 /**
- * exit handles player exit input
+ * exit looks for player input in current room exits, if found move to new room location
+ * Relook players new room, sending room desc + exits to view
  * @param  {object} message Message object sent by player, contains input text
  * @param  {object} bot     Messenger API instance for sending and receiving messages
- * @return {side effect}    Relooks players new room, sending room desc + exits to view
+ * @return {object}   Returns message sent to the player
  */
 exit(message, bot) {
     const input = message.text.toLowerCase()
@@ -66,9 +67,10 @@ exit(message, bot) {
   }
   /**
    * getInventoryView handles player inventory input
+   * Sends a player's inventory list to their view
    * @param  {object} message Message object sent by player, contains input text
    * @param  {object} bot     Messenger API instance for sending and receiving messages
-   * @return {side effect}    Sends player their inventory list to their view
+   * @return {object}    Returns message sent to the player
    */
   getInventoryView(message, bot) {
     const user = PlayerService.getPlayer(message.from)

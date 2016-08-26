@@ -7,9 +7,10 @@ class Take {
 
 /**
  * takeItem handles player take input
+ * Looks for player input in room's items array, adds to invenory if found
  * @param  {object} message Message object sent by player, contains input text
  * @param  {object} bot     Messenger API instance for sending and receiving messages
- * @return {side effect}    Sends user a response with bot object
+ * @return {object}    Message sent to the player
  */
 takeItem(message, bot) {
   const input = message.text.toLowerCase().trim()
