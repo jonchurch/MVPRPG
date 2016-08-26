@@ -1,5 +1,5 @@
 {
-  "name": "bot-server",
+  "name": "mvprpg",
   "version": "1.0.0",
   "description": "server architecture for building bots",
   "main": "server.js",
@@ -8,13 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonathanZWhite/bot-server.git"
+    "url": "git+https://github.com/jonchurch/mvprpg.git"
   },
-  "author": "Jonathan White",
+  "author": "Jonathan Church",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JonathanZWhite/bot-server/issues"
-  },
   "homepage": "https://github.com/JonathanZWhite/bot-server#readme",
   "devDependencies": {
     "nodemon": "^1.9.1"
@@ -27,7 +24,7 @@
     "lodash": "^4.15.0",
     "lodash-node": "^3.10.2",
     "lodash.find": "^4.6.0",
-    "node-telegram-bot-api": "^0.21.1",
+    "node-telegram-bot-api": "^0.23.3",
     "spotify-web-api-node": "^2.3.0",
     "winston": "^2.2.0"
   }

@@ -13,6 +13,40 @@ class Commands {
 
   constructor() {}
 
+  updateView(message, bot) {
+    const callbackData = message.data
+    console.log('message',message);
+    console.log('message_id',message.parentMessage.message_id);
+    if (callbackData === 'EXIT/EXPAND') {
+      let reply_markup = JSON.stringify({
+              inline_keyboard: [
+                  [{
+                      text: 'North',
+                      callback_data: 'EXIT/NORTH'
+                  }],
+                  [{
+                      text: 'East',
+                      callback_data: 'EXIT/EAST'
+                  }],
+                  [{
+                      text: 'South',
+                      callback_data: 'EXIT/SOUTH'
+                  }],
+                  [{
+                      text: 'WEST',
+                      callback_data: 'EXIT/WEST'
+                  }]
+              ]
+          })
+
+const options = {
+  chat_id: message.chat_id,
+  message_id: message.parentMessage.message_id
+}
+      bot.editMessageReplyMarkup(reply_markup, options)
+    }
+  }
+
 /**
  * exit handles player exit input
  * @param  {object} message Message object sent by player, contains input text

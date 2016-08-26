@@ -18,24 +18,37 @@ class Look {
         const viewStr = getRoomDescription(message, bot)
         const keyboard = {
             reply_markup: JSON.stringify({
-                keyboard: [
-                    [{
-                        text: 'Look'
-                    }, {
-                        text: 'Take'
-                    }],
-                    [{
-                        text: 'North'
-                    }, {
-                        text: 'East'
-                    }, {
-                        text: 'South'
-                    }, {
-                        text: 'West'
-                    }]
-                ],
-                resize_keyboard: true
-            })
+                    inline_keyboard: [
+                        [{
+                            text: '🔍Inspect',
+                            callback_data: 'LOOK'
+                        }],
+                        [{
+                            text: 'Exit',
+                            callback_data: 'EXIT/EXPAND'
+                        }]
+                    ]
+                }) //end JSON.stringify
+
+                // keyboard: [
+                //     [{
+                //         text: 'Look',
+                //         callback_data: '1'
+                //     }, {
+                //         text: 'Take'
+                //     }],
+                //     [{
+                //         text: 'North'
+                //     }, {
+                //         text: 'East'
+                //     }, {
+                //         text: 'South'
+                //     }, {
+                //         text: 'West'
+                //     }]
+                // ],
+                // resize_keyboard: true,
+                // })
         }
         console.log(keyboard);
         bot.sendMessage(message.from, viewStr, keyboard)
