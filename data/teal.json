@@ -2,7 +2,7 @@
     "champagne": {
         "id": "0",
         "name": "Champagne Room",
-        "description": "Absolutely no sex is allowed here. There are chairs arranged around a coffee table with magazines in the center of the room. There is one drug on the table next to a spoon.",
+        "description": "Absolutely no sex is allowed here. There are chairs arranged around a coffee table with magazines in the center of the room. There is a 🔑 on the table next to a *spoon*.",
         "exits": [{
             "direction": "south",
             "location": "1"
@@ -11,13 +11,22 @@
             "name": "spoon",
             "id": "null",
             "value": 7,
-            "take": -1
+            "take": -1,
+            "description": "Shiny and tiny, you can see your reflection in it. Perfect fit for a bowl of peanut butter"
         }, {
             "name": "drug",
             "id": "420",
             "value": 67,
-            "take": 1
+            "take": 1,
+            "description": "The drug is green and vegetal. Smells like your uncle"
+        }, {
+          "name": "🔑",
+          "description": "\"_The 🔑 to more success is coco butter_\""
+        }, {
+          "name": "magazines",
+          "description": "These magazines are a few years old, from back when DJ Khaled had no jacuzzi"
         }
+
       ],
         "features": [],
         "isQuitRoom": false

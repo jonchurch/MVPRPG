@@ -27,7 +27,7 @@ exit(message, bot) {
     const found = find(room_exits, ['direction', input])
     //The goal here is to move the player and relook the rooms
     PlayerService.movePlayer(message.from, found.location)
-  return  look.getLookString(message, bot)
+  return  look.atRoom(message, bot)
 
   }
   /**

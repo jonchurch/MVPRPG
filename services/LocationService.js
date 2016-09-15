@@ -9,9 +9,11 @@ module.exports = (function() {
 
 
     return {
+        getRoomName: getRoomName,
         getRoomDescription: getRoomDescription,
         getExits: getExits,
         getRoomExitsView: getRoomExitsView,
+        getRoomItemsView: getRoomItemsView,
         removeItem: removeItem,
         isInRoom: isInRoom,
         roomsList: rooms
@@ -74,6 +76,25 @@ module.exports = (function() {
             arr.push(direction.charAt(0).toUpperCase() + direction.slice(1))
         }
         return '\nExits: ' + arr.join(", ")
+    }
+
+    function getRoomItemsView(hash) {
+      const user = store.getState(hash)
+      const loc = user.current_location
+      const items = rooms[loc].items
+      let arr = []
+      for (let i = 0; i < items.length; i += 1) {
+        let item = items[i].name
+        arr.push(item)
+      }
+      return '\nItems: ' + arr.join(", ")
+    }
+
+    function getRoomName(hash) {
+      const user = store.getState(hash)
+      const loc = user.current_location
+      const name = rooms[loc].name
+      return '*' + name + '*\n'
     }
 
 
