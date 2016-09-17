@@ -17,12 +17,12 @@ class Commands {
  * exit handles player exit input
  * @param  {object} message Message object sent by player, contains input text
  * @param  {object} bot     Messenger API instance for sending and receiving messages
- * @return {side effect}    Relooks players new room, sending room desc + exits to view
+ * @return {function}    Relooks players new room, sending room desc + exits to view
  */
 exit(message, bot) {
     const input = message.text.toLowerCase()
     // If message.text matches a room exit of users current room
-    const user = store.getState(message.from)
+    const user = PlayerService.getPlayer(message.from)
     const room_exits = LocationService.getExits(user.current_location)
     const found = find(room_exits, ['direction', input])
     //The goal here is to move the player and relook the rooms
@@ -34,7 +34,7 @@ exit(message, bot) {
    * getInventoryView handles player inventory input
    * @param  {object} message Message object sent by player, contains input text
    * @param  {object} bot     Messenger API instance for sending and receiving messages
-   * @return {side effect}    Sends player their inventory list to their view
+   * @return {function}    Sends player's inventory list to their view
    */
   getInventoryView(message, bot) {
     const user = PlayerService.getPlayer(message.from)

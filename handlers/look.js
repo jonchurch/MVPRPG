@@ -14,7 +14,7 @@ class Look {
          * @return {function}    Sends location description and exits to player view
          */
     atRoom(message, bot) {
-        store.getState(message.from)
+        // store.getState(message.from)
         const viewStr = getRoomDescription(message)
         const options = {
             parse_mode: 'Markdown'
