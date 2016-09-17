@@ -24,7 +24,7 @@ takeItem(message, bot) {
       return bot.sendMessage(message.from, found.name + ' added to inventory.' )
   }
   else {
-    return bot.sendMessage(message.from, 'I don\'t think I can get you ' + token[0])
+    return bot.sendMessage(message.from, 'They don\'t want you to have ' + token[0])
   }
 }
 

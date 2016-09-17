@@ -16,29 +16,29 @@ class Look {
     atRoom(message, bot) {
         store.getState(message.from)
         const viewStr = getRoomDescription(message)
-        const keyboard = {
-            parse_mode: 'Markdown',
-            reply_markup: JSON.stringify({
-                keyboard: [
-                    [{
-                        text: '🔍 Look'
-                    }, {
-                        text: 'Take 🔑'
-                    }],
-                    [{
-                        text: 'North'
-                    }, {
-                        text: 'East'
-                    }, {
-                        text: 'South'
-                    }, {
-                        text: 'West'
-                    }]
-                ],
-                resize_keyboard: true
-            })
+        const options = {
+            parse_mode: 'Markdown'
+            // reply_markup: JSON.stringify({
+            //     keyboard: [
+            //         [{
+            //             text: '🔍 Look'
+            //         }, {
+            //             text: 'Take 🔑'
+            //         }],
+            //         [{
+            //             text: 'North'
+            //         }, {
+            //             text: 'East'
+            //         }, {
+            //             text: 'South'
+            //         }, {
+            //             text: 'West'
+            //         }]
+            //     ],
+            //     resize_keyboard: true
+            // })
         }
-        bot.sendMessage(message.from, viewStr, keyboard)
+        bot.sendMessage(message.from, viewStr, options)
     }
 
     atObject(message, bot) {
@@ -52,29 +52,29 @@ class Look {
         viewStr = found.description
       } else viewStr = 'Nothing to see'
       // const viewStr = getObjectDescription(message)
-      const keyboard = {
+      const options = {
           parse_mode: 'Markdown',
-          reply_markup: JSON.stringify({
-              keyboard: [
-                  [{
-                      text: '🔍 Look'
-                  }, {
-                      text: 'Take 🔑'
-                  }],
-                  [{
-                      text: 'North'
-                  }, {
-                      text: 'East'
-                  }, {
-                      text: 'South'
-                  }, {
-                      text: 'West'
-                  }]
-              ],
-              resize_keyboard: true
-          })
+          // reply_markup: JSON.stringify({
+          //     keyboard: [
+          //         [{
+          //             text: '🔍 Look'
+          //         }, {
+          //             text: 'Take 🔑'
+          //         }],
+          //         [{
+          //             text: 'North'
+          //         }, {
+          //             text: 'East'
+          //         }, {
+          //             text: 'South'
+          //         }, {
+          //             text: 'West'
+          //         }]
+          //     ],
+          //     resize_keyboard: true
+          // })
       }
-      bot.sendMessage(message.from, viewStr, keyboard)
+      bot.sendMessage(message.from, viewStr, options)
     }
 }
 
@@ -86,7 +86,7 @@ function getRoomDescription(message) {
     const roomName = LocationService.getRoomName(message.from)
     const description = LocationService.getRoomDescription(message.from)
     const exits = LocationService.getRoomExitsView(message.from)
-    const items = LocationService.getRoomItemsView(message.from)
+    // const items = LocationService.getRoomItemsView(message.from)
     return roomName + description + exits
 }
 
